@@ -1,0 +1,22 @@
+{
+  "langName": "Français",
+  "home": {
+    "1": "Récupérer et afficher la liste des ASPSPs disponibles",
+    "2": "Laisser l'utilisateur créer des consentements pour se connecter aux ASPSP",
+    "3": "Récupérer et afficher les comptes de l'utilisateur",
+    "4": "Récupérer et afficher les transactions des comptes de l'utilisateur",
+    "5": "Laisser l'utilisateur supprimer ses consentements",
+    "title": "OBAAS Training - Accueil",
+    "welcome": "Bienvenue dans la formation Sopra Banking Software Open Banking Aggregation & Advanced Services",
+    "pitch": "Le but de cet exercice est de créer une application front-end vue.js qui consommera les APIs back-end OBAAS pour agréger les comptes bancaires d'un utilisateur.",
+    "steps": "Étapes:"
+  },
+  "pageNotFound": {
+    "title": "Page introuvable",
+    "sorry": "Désolé mais la page que vous avez demandé n'existe pas"
+  },
+  "commons": {
+    "loading": "Chargement",
+    "language": "Langue"
+  }
+}

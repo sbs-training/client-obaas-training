@@ -1,0 +1,610 @@
+openapi: "3.0.1"
+info:
+  title: "OBAAS"
+  description: "Open Banking Aggregation & Advanced Services"
+  version: "v1"
+servers:
+  - url: "https://front.dxp.delivery/service-obaas-training"
+tags:
+  - name: "ASPSP"
+  - name: "Consent"
+  - name: "Accounts"
+  - name: "Category"
+paths:
+  /aspsps:
+    get:
+      tags:
+        - "ASPSP"
+      summary: "Retrieve a list of ASPSPs"
+      description: "This endpoint allows to get all **ASPSP**s registered."
+      operationId: "aspsps_find_all"
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer aladin"
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-aspsps-get"
+              examples:
+                aspsps_find_all:
+                  value: "[\n    {\n        \"accessType\": \"OPEN_BANKING\",\n        \"countryCode\": \"FR\",\n        \"group\": \"Revolut\",\n        \"icon\": \"https:\/\/front.dxp.delivery\/resources\/logos\/banks\/revolut-fr-round.png\",\n        \"id\": \"5efb2c207737311e6e8c534d\",\n        \"name\": \"Revolut\",\n        \"nationalId\": \"fr-revolut-ob\",\n        \"status\": \"ACTIVE\"\n    },\n    {\n        \"accessType\": \"OPEN_BANKING\",\n        \"countryCode\": \"FR\",\n        \"group\": \"N26\",\n        \"icon\": \"https:\/\/front.dxp.delivery\/resources\/logos\/banks\/n26-fr-round.png\",\n        \"id\": \"5f0714a57737311e6e8c536a\",\n        \"name\": \"N26\",\n        \"nationalId\": \"fr-n26-ob\",\n        \"status\": \"ACTIVE\"\n    }\n]"
+  /consents:
+    get:
+      tags:
+        - "Consent"
+      summary: "Find consents by queries"
+      description: "This API is used to list all the consents of a PSU."
+      operationId: "consents_find_all"
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer aladin"
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-consents-get"
+              examples:
+                consents_find_all:
+                  value: "[{\n      \"id\": \"105fd165-f2a7-4f35-a782-1074b87a33af\",\n      \"aspspId\": \"105fd165-f2a7-4f35-a782-1074b87a33af\",\n      \"catalog\": \"AIS\",\n      \"validityDate\": \"2021-12-23\",\n      \"lifecycleStatus\": \"ACTIVE\",\n      \"authorisationStatus\": \"AWAITING_AUTHORIZATION\",\n      \"updateDateTime\": \"2021-08-31T15:24:32.006Z\",\n      \"creationDateTime\": \"2021-08-31T15:24:32.006Z\"\n    }]"
+    post:
+      tags:
+        - "Consent"
+      summary: "Initiate a consent"
+      description: "This API is used to initiate a consent."
+      operationId: "consents_create"
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer blitzcrank"
+        - name: "Content-Type"
+          in: "header"
+          description: "Media type of the payload"
+          required: true
+          schema:
+            type: "string"
+          example: "application/json"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api-consents1898781282"
+            examples:
+              consents_create:
+                value: "{\n    \"aspspId\": \"5f0714a57737311e6e8c536a\",\n    \"callBackUri\": \"http:\/\/localhost:8080\"\n}"
+      responses:
+        "201":
+          description: "201"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-consent-post"
+              examples:
+                consents_create:
+                  value: "{\n    \"consent\": {\n        \"id\": \"81600493-2174-458c-a2b5-87356ab2aa37\",\n        \"aspspId\": \"5f0714a57737311e6e8c536a\",\n        \"catalog\": \"AIS\",\n        \"validityDate\": \"2021-01-01\",\n        \"lifecycleStatus\": \"ACTIVE\",\n        \"authorisationStatus\": \"AWAITING_AUTHORIZATION\",\n        \"updateDateTime\": \"2021-05-14T14:45:33.721Z\",\n        \"creationDateTime\": \"2021-05-14T14:45:33.721Z\"\n    },\n    \"redirectUri\": \"https:\/\/front.dxp.delivery\/service-obaas-training\/login?redirect_uri=http:\/\/localhost:8080&consent_id=81600493-2174-458c-a2b5-87356ab2aa37&state=b5686dff-bedf-465b-9d87-331a4ae18b0b\"\n}"
+  /consents/confirm:
+    post:
+      tags:
+        - "Consent"
+      summary: "Confirm a consent"
+      description: "This API is used to confirm a consent."
+      operationId: "consents_confirm"
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer braum"
+        - name: "Content-Type"
+          in: "header"
+          description: "Media type of the payload"
+          required: true
+          schema:
+            type: "string"
+          example: "application/json"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/request-consent-confirm-post"
+            examples:
+              consents_confirm:
+                value: "{\n    \"consentId\": \"f7a5ea0b-e783-49f5-9bce-8246cf08ae46\",\n    \"state\": \"73f7cd19-cd5f-49c1-8970-9aac462828c4\"\n}"
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-consent-confirm-post"
+              examples:
+                consents_confirm:
+                  value: "{\n    \"id\": \"f7a5ea0b-e783-49f5-9bce-8246cf08ae46\",\n    \"aspspId\": \"5f0714a57737311e6e8c536a\",\n    \"catalog\": \"AIS\",\n    \"validityDate\": \"2021-01-01\",\n    \"lifecycleStatus\": \"ACTIVE\",\n    \"authorisationStatus\": \"AUTHORIZED\",\n    \"updateDateTime\": \"2021-05-14T15:14:43.794Z\",\n    \"creationDateTime\": \"2021-05-14T15:09:05.680Z\"\n}"
+  /consents/{id}:
+    delete:
+      tags:
+        - "Consent"
+      summary: "Delete the consent"
+      description: "This API is used to delete a consent."
+      operationId: "consents_delete"
+      parameters:
+        - name: "id"
+          in: "path"
+          description: "Id of the consent to delete"
+          required: true
+          schema:
+            type: "string"
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: false
+          schema:
+            type: "string"
+          example: "Bearer brand"
+      responses:
+        "204":
+          description: "Consent deleted successfully"
+  /accounts:
+    get:
+      tags:
+        - "Accounts"
+      summary: "Retrieve a list of accounts"
+      description: "A `GET` request is used to retrieve all the PSU accounts from TPP database."
+      operationId: "accounts_find_all"
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer braum"
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-accounts-get"
+              examples:
+                accounts_findAll:
+                  value: "[\n    {\n        \"id\": \"1f5f3e0912054a5688075faf646f0de6\",\n        \"name\": \"Main Account\",\n        \"cashAccountType\": \"CACC\",\n        \"balances\": [\n            {\n                \"creditDebitIndicator\": \"CREDIT\",\n                \"type\": \"OPENING_BOOKED\",\n                \"amount\": {\n                    \"value\": 5817.39,\n                    \"currency\": \"EUR\"\n                }\n            }\n        ],\n        \"references\": [\n            {\n                \"type\": \"IBAN\",\n                \"id\": \"DE27100111677278015529\"\n            }\n        ],\n        \"currency\": \"EUR\",\n        \"lastRefreshDate\": \"2021-05-13T15:51:49.374379Z\",\n        \"aspsp\": {\n            \"id\": \"5f0714a57737311e6e8c536a\",\n            \"name\": \"N26\",\n            \"icon\": \"https:\/\/front.dxp.delivery\/resources\/logos\/banks\/n26-fr-round.png\"\n        }\n    },\n    {\n        \"id\": \"863154b7c8204d908866cf3e499f554d\",\n        \"name\": \"Secondary Account\",\n        \"cashAccountType\": \"SVGS\",\n        \"balances\": [\n            {\n                \"creditDebitIndicator\": \"CREDIT\",\n                \"type\": \"OPENING_BOOKED\",\n                \"amount\": {\n                    \"value\": 15000,\n                    \"currency\": \"EUR\"\n                }\n            }\n        ],\n        \"references\": [\n            {\n                \"type\": \"IBAN\",\n                \"id\": \"DE27100631701263677271\"\n            }\n        ],\n        \"currency\": \"EUR\",\n        \"lastRefreshDate\": \"2021-05-13T15:51:49.378487Z\",\n        \"aspsp\": {\n            \"id\": \"5f0714a57737311e6e8c536a\",\n            \"name\": \"N26\",\n            \"icon\": \"https:\/\/front.dxp.delivery\/resources\/logos\/banks\/n26-fr-round.png\"\n        }\n    }\n]"
+  /accounts/{accountId}/transactions:
+    get:
+      tags:
+        - "Accounts"
+      summary: "Retrieve a list of transactions"
+      description: "A `GET` request is used to retrieve all the PSU transactions from
+        an identified account from TPP database."
+      operationId: "transactions_find_transactions"
+      parameters:
+        - name: "accountId"
+          in: "path"
+          description: ""
+          required: true
+          schema:
+            type: "string"
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer sona"
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response-transactions-get"
+              examples:
+                transactions_find_transactions:
+                  value: "[\n    {\n        \"accountId\": \"863154b7c8204d908866cf3e499f554d\",\n        \"id\": \"adaca53ddb9a47fdb1e1b15adacsf12c\",\n        \"creditDebitIndicator\": \"CREDIT\",\n        \"status\": \"BOOKED\",\n        \"category\": {\n            \"id\": \"d8f37f7d19c240abb4ef5d5dbebae4ef\",\n            \"type\": \"TRANSFERS\"\n        },\n        \"bookingDateTime\": \"2021-05-11T00:00:00Z\",\n        \"remittanceInformation\": {\n            \"unstructured\": \"Virement interne\"\n        },\n        \"transactionAmount\": {\n            \"value\": 15000,\n            \"currency\": \"EUR\"\n        },\n        \"counterPartyReferences\": [],\n        \"organization\": \"JOHN DOE\",\n        \"lastRefreshDate\": \"2021-05-13T18:07:28.904573Z\"\n    }\n]"
+  /categories:
+    get:
+      tags:
+        - "Category"
+      summary: "Get all existing categories"
+      description: "Returns all categories."
+      operationId: "list_of_category"
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          description: "Holds Bearer information"
+          required: true
+          schema:
+            type: "string"
+          example: "Bearer braum"
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/response_categories"
+              examples:
+                list_of_category:
+                  value: "[\n    {\n        \"id\": \"01f944531ab04cd3ba32a14cebe8a927\",\n        \"code\": \"expenses:house.other\",\n        \"primaryName\": \"Home Improvements\",\n        \"secondaryName\": \"Home Improvements Other\",\n        \"type\": \"EXPENSES\",\n        \"typeName\": \"Expenses\"\n    },\n    {\n        \"id\": \"0217989903af43c5b7b4e66c0515d0d5\",\n        \"code\": \"expenses:misc.outlays\",\n        \"primaryName\": \"Other\",\n        \"secondaryName\": \"Business Expenses\",\n        \"type\": \"EXPENSES\",\n        \"typeName\": \"Expenses\"\n    }\n]"
+components:
+  schemas:
+    response_categories:
+      title: "response_categories"
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          code:
+            type: "string"
+            description: "Machine readable category code."
+          secondaryName:
+            type: "string"
+            description: "The secondary name of this category."
+          typeName:
+            type: "string"
+            description: "Type name of the category."
+          primaryName:
+            type: "string"
+            description: "The primary name of this category."
+          id:
+            type: "string"
+            description: "The internal identifier of the category, referenced by e.g.
+              a transaction."
+          type:
+            type: "string"
+            description: "Type of the category. Values: 'INCOME', 'EXPENSES', 'TRANSFERS'"
+        description: "Array of CategoryPfmApiDTOs"
+    response-consent-post:
+      title: "response-consent-post"
+      type: "object"
+      properties:
+        redirectUri:
+          type: "string"
+          description: "URL Redirection"
+        consent:
+          required:
+            - "creationDateTime"
+            - "updateDateTime"
+          type: "object"
+          properties:
+            lifecycleStatus:
+              type: "string"
+              description: "Soft-deletion state, possible values DELETED, ACTIVE"
+            validityDate:
+              type: "string"
+              description: "Date until which consent is valid."
+            catalog:
+              type: "string"
+              description: "The catalog of the service, possible values PIS, AIS"
+            authorisationStatus:
+              type: "string"
+              description: "Status holding the authorisation lifecycle., possible
+                values AWAITING_AUTHORIZATION, AUTHORIZED, REJECTED"
+            id:
+              type: "string"
+              description: "Auto generated consent identifier."
+            updateDateTime:
+              type: "string"
+              description: "Last modification date and time of the consent."
+            creationDateTime:
+              type: "string"
+              description: "Creation date and time of the consent."
+            aspspId:
+              type: "string"
+              description: "ASPSP identifier"
+          description: "Consent object"
+    request-consent-confirm-post:
+      title: "request-consent-confirm-post"
+      type: "object"
+      properties:
+        consentId:
+          type: "string"
+          description: "Consent Id"
+        state:
+          type: "string"
+          description: "OAuth2 State"
+    response-consents-get:
+      title: "response-consents-get"
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          lifecycleStatus:
+            type: "string"
+            description: "Soft-deletion state, possible values DELETED, ACTIVE"
+          catalog:
+            type: "string"
+            description: "The catalog of the service, possible values PIS, AIS"
+          aspspId:
+            type: "string"
+            description: "ASPSP identifier"
+          validityDate:
+            type: "string"
+            description: "Date until which consent is valid."
+          authorisationStatus:
+            type: "string"
+            description: "Status holding the authorisation lifecycle., possible values
+              AWAITING_AUTHORIZATION, AUTHORIZED, REJECTED"
+          id:
+            type: "string"
+            description: "Auto generated consent identifier."
+          updateDateTime:
+            type: "string"
+            description: "Last modification date and time of the consent."
+          creationDateTime:
+            type: "string"
+            description: "Creation date and time of the consent."
+        description: "Array of ConsentApiDTOs"
+    response-consent-confirm-post:
+      title: "response-consent-confirm-post"
+      required:
+        - "scaExpirationDate"
+        - "signingDate"
+      type: "object"
+      properties:
+        lifecycleStatus:
+          type: "string"
+          description: "Soft-deletion state, possible values DELETED, ACTIVE"
+        catalog:
+          type: "string"
+          description: "The catalog of the service, possible values PIS, AIS"
+        aspspId:
+          type: "string"
+          description: "ASPSP identifier"
+        validityDate:
+          type: "string"
+          description: "Date until which consent is valid."
+        authorisationStatus:
+          type: "string"
+          description: "Status holding the authorisation lifecycle., possible values
+            AWAITING_AUTHORIZATION, AUTHORIZED, REJECTED"
+        id:
+          type: "string"
+          description: "Auto generated consent identifier."
+        updateDateTime:
+          type: "string"
+          description: "Last modification date and time of the consent."
+        creationDateTime:
+          type: "string"
+          description: "Creation date and time of the consent."
+    api-consents1898781282:
+      type: "object"
+      properties:
+        callBackUri:
+          type: "string"
+          description: "This URI will be used by the ASPSP to redirect back to the
+            TPP domain"
+        aspspId:
+          type: "string"
+          description: "ASPSP identifier"
+    response-transactions-get:
+      title: "response-transactions-get"
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          counterPartyReferences:
+            type: "array"
+            description: "References of the counter party"
+            items:
+              type: "object"
+              properties:
+                id:
+                  type: "string"
+                  description: "The account reference of the PSU."
+                type:
+                  type: "string"
+                  description: "Name of the identification scheme, in a coded form
+                    as published in an external list."
+          id:
+            type: "string"
+            description: "A unique and immutable identifier used to identify the contract
+              resource. This identifier has no meaning to the account owner."
+          bookingDateTime:
+            type: "string"
+            description: "Date and time when a transaction entry is posted to an account
+              on the account services' books."
+          counterPartyName:
+            type: "string"
+            description: "The name of the counterparty"
+          creditDebitIndicator:
+            type: "string"
+            description: "Indicates whether the transaction is a credit or a debit
+              entry."
+          accountId:
+            type: "string"
+            description: "A unique and immutable identifier used to identify the account
+              (same value than the resourceId in /accounts). This identifier has no
+              meaning to the account owner."
+          remittanceInformation:
+            type: "object"
+            properties:
+              unstructured:
+                type: "string"
+                description: "Information supplied to enable the matching/reconciliation
+                  of an entry with the items that the payment is intended to settle,
+                  such as commercial invoices in an accounts' receivable system, in
+                  an unstructured form."
+              structured:
+                type: "string"
+                description: "Information supplied to enable the matching/reconciliation
+                  of an entry with the items that the payment is intended to settle,
+                  such as commercial invoices in an accounts' receivable system, in
+                  an structured form."
+            description: "Remittance information"
+          lastRefreshDate:
+            type: "string"
+            description: "Date of the last refresh of the TPP database information."
+          transactionAmount:
+            type: "object"
+            properties:
+              currency:
+                type: "string"
+                description: "ISO 4217 code."
+              value:
+                type: "number"
+                description: "The amount given with fractional digits, where fractions
+                  must be compliant to the currency definition. Up to 14 significant
+                  figures. Negative amounts are signed by minus.The decimal separator
+                  is a dot."
+            description: "Amount of the transaction"
+          organization:
+            type: "string"
+            description: "Name of the organization you made a payment for or received
+              a payment from. For instance a merchant, public institutions, etc."
+          valueDateTime:
+            type: "string"
+            description: "Date and time at which assets become available to the account
+              owner in case of a credit entry, or cease to be available to the account
+              owner in case of a debit entry."
+          category:
+            type: "object"
+            properties:
+              id:
+                type: "string"
+                description: "Unique identifier of category "
+              type:
+                type: "string"
+                description: "category type e.g EXPENSE"
+            description: "Transaction category on the bank side."
+          status:
+            type: "string"
+            description: "Status of a transaction entry on the books of the account
+              services."
+        description: "Array of TransactionApiDTOs"
+    response-accounts-get:
+      title: "response-accounts-get"
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          cashAccountType:
+            type: "string"
+            description: "ISO 20022 ExternalCashAccountType1Code"
+          balances:
+            type: "array"
+            description: "List of balance of the account."
+            items:
+              type: "object"
+              properties:
+                amount:
+                  type: "object"
+                  properties:
+                    currency:
+                      type: "string"
+                      description: "ISO 4217 code."
+                    value:
+                      type: "number"
+                      description: "The amount given with fractional digits, where
+                        fractions must be compliant to the currency definition.
+                        Up to 14 significant figures. Negative amounts are signed
+                        by minus.The decimal separator is a dot."
+                  description: "Balance amount"
+                type:
+                  type: "string"
+                  description: "Balance type, in a coded form."
+                creditDebitIndicator:
+                  type: "string"
+                  description: "Indicates whether the balance is a credit or a
+                    debit."
+          id:
+            type: "string"
+            description: "A unique and immutable identifier used to identify the
+              contract resource. This identifier has no meaning to the account
+              owner."
+          references:
+            type: "array"
+            description: "Array of account references"
+            items:
+              type: "object"
+              properties:
+                id:
+                  type: "string"
+                  description: "The account reference of the PSU."
+                type:
+                  type: "string"
+                  description: "Name of the identification scheme, in a coded
+                    form as published in an external list."
+          lastRefreshDate:
+            type: "string"
+            description: "Date of the last refresh of the TPP database information."
+          aspsp:
+            type: "object"
+            properties:
+              icon:
+                type: "string"
+                description: "Logo / icon of the ASPSP at TPP side."
+              name:
+                type: "string"
+                description: "Name of the ASPSP at TPP side."
+              id:
+                type: "string"
+                description: "Unique identifier of the ASPSP at TPP side."
+            description: "Aspsp information related this account. Empty when the
+              account ingested is equals to 'true'"
+          name:
+            type: "string"
+            description: "The nickname of contract."
+          currency:
+            type: "string"
+            description: "A code allocated to a currency by a Maintenance Agency
+              under an international identification scheme, as described in the
+              latest edition of the international standard ISO 4217 'Codes for
+              the representation of currencies and funds."
+    response-aspsps-get:
+      title: "response-aspsps-get"
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          accessType:
+            type: "string"
+            description: "This describes how the connection is done to reach this
+              **ASPSP**. The value can be 'OPEN_BANKING' or 'OTHER', possible values
+              OPEN_BANKING, OTHER"
+          comments:
+            type: "string"
+            description: "Comments about the **ASPSP**. Free text."
+          nationalId:
+            type: "string"
+            description: "Official national identifier of the **ASPSP**"
+          countryCode:
+            type: "string"
+            description: "Country code related to the competent authority of the ASPSP"
+          name:
+            type: "string"
+            description: "Name of the **ASPSP**"
+          icon:
+            type: "string"
+            description: "URL of the icon of this **ASPSP**"
+          id:
+            type: "string"
+            description: "Id of the **ASPSP** in the system. This field is unique
+              for each **ASPSP**"
+          status:
+            type: "string"
+            description: "Status of the **ASPSP**, possible values ACTIVE, DISABLED"
+          group:
+            type: "string"
+            description: "Identifier of the group of an **ASPSP**"
+        description: "Array of AspspApiDTOs"

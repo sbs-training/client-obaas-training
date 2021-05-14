@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 916 1967" style="enable-background:new 0 0 916 1967;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'Helvetica';}
+	.st2{font-size:16.5px;}
+	.st3{fill:none;stroke:#000000;stroke-width:1.466;stroke-miterlimit:10;stroke-dasharray:13.5321,5.8639;}
+	.st4{fill:#FFFFFF;stroke:#000000;stroke-width:2.8147;stroke-miterlimit:10;}
+	.st5{font-size:11px;}
+	.st6{fill:#B8ADAD;stroke:#000000;stroke-width:1.466;stroke-miterlimit:10;}
+	.st7{font-family:'Helvetica-Bold';}
+	.st8{fill:none;stroke:#000000;stroke-width:1.466;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:1.466;stroke-miterlimit:10;stroke-dasharray:7.0367;}
+	.st10{fill:#FF0066;stroke:#000000;stroke-width:1.466;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<rect y="0" class="st0" width="916" height="1967"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 424.8875 26.3876)" class="st1 st2">Aggregation Flow</text>
+	</g>
+	<g>
+		<path class="st3" d="M59.7,103.3v1851.4"/>
+		<path class="st3" d="M407.3,103.3v1851.4"/>
+		<path class="st3" d="M764.6,103.3v1851.4"/>
+		<path class="st3" d="M864.8,103.3v1851.4"/>
+	</g>
+	<g>
+		<path class="st3" d="M0,0"/>
+		<g>
+			<path class="st4" d="M8.8,55.8h101.7v47.5H8.8V55.8z"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 27.8829 85.6718)" class="st1 st5">Customer</text>
+		</g>
+		<path d="M0,0"/>
+		<g>
+			<path class="st4" d="M356.4,55.8h101.7v47.5H356.4V55.8z"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 375.4957 85.6718)" class="st1 st5">Front-end</text>
+		</g>
+		<path d="M0,0"/>
+		<g>
+			<path class="st4" d="M725.6,55.8h78.1v47.5h-78.1V55.8z"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 744.6832 85.6718)" class="st1 st5">OBAAS</text>
+		</g>
+		<path d="M0,0"/>
+		<g>
+			<path class="st4" d="M821.3,55.8h87.1v47.5h-87.1V55.8z"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 840.3703 85.6718)" class="st1 st5">ASPSP</text>
+		</g>
+		<path d="M0,0"/>
+	</g>
+	<g>
+		<path class="st6" d="M43.8,135.8h821l15.8,15.8v24.6H43.8V135.8 M864.8,135.8v15.8h15.8"/>
+		<g>
+			<text transform="matrix(1 0 0 1 321.3081 160.4368)" class="st7 st5">Step 1: Selection of ASPSP to aggregate</text>
+		</g>
+		<g>
+			<g>
+				<rect x="100.8" y="250" class="st0" width="265.2" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 115.7122 265.8509)" class="st1 st5">Customer wants to aggregate his data</text>
+			<g>
+				<text transform="matrix(1 0 0 1 103.486 265.8509)" class="st7 st5">1 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M59.7,272.9h333.1"/>
+			<g transform="translate(407.274475008069,222.88756625799996) translate(-407.274475008069,-222.88756625799996)">
+				<path d="M392.6,265.6l14.7,7.3l-14.7,7.3V265.6z"/>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M750.2,287.1"/>
+			<path class="st8" d="M407.3,287.1"/>
+		</g>
+		<g>
+			<path class="st9" d="M421.8,333.7"/>
+			<path class="st9" d="M764.6,333.7"/>
+		</g>
+		<g>
+			<g>
+				<rect x="491.1" y="357.5" class="st0" width="116.1" height="22.9"/>
+			</g>
+			<g>
+				<rect x="503.3" y="375.1" class="st0" width="177.6" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 505.9306 373.2971)" class="st7 st5">[GET /aspsps]</text>
+			<g>
+				<text transform="matrix(1 0 0 1 493.7044 373.2971)" class="st7 st5">2 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 505.9306 390.8889)" class="st1 st5">Search the list of ASPSP&apos;s</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,397.9h342.9"/>
+			<g transform="translate(764.6438206284465,397.9255523879999) translate(-764.6438206284465,-397.9255523879999)">
+				<path d="M750,390.6l14.7,7.3l-14.7,7.3V390.6z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="505.9" y="421.7" class="st0" width="160.1" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 520.7838 437.507)" class="st1 st5">HTTP 200 - aspsps [ ]</text>
+			<g>
+				<text transform="matrix(1 0 0 1 508.5576 437.507)" class="st7 st5">3</text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M764.6,444.5H421.8"/>
+			<g transform="translate(407.274475008069,444.5437094979999) translate(-407.274475008069,-444.5437094979999)">
+				<path d="M421.9,437.2l-14.7,7.3l14.7,7.3V437.2z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="150" y="468.3" class="st0" width="167" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 164.8533 484.1252)" class="st1 st5">Display list of ASPSP&apos;s</text>
+			<g>
+				<text transform="matrix(1 0 0 1 152.6271 484.1252)" class="st7 st5">4 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M407.3,491.2H74.1"/>
+			<g transform="translate(59.65458007128515,491.16186660799985) translate(-59.65458007128515,-491.16186660799985)">
+				<path d="M74.3,483.8l-14.7,7.3l14.7,7.3V483.8z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="127.3" y="514.9" class="st0" width="212.2" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 142.2083 530.7433)" class="st1 st5">Customer selects one ASPSP</text>
+			<g>
+				<text transform="matrix(1 0 0 1 129.9821 530.7433)" class="st7 st5">5 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M59.7,537.8h333.1"/>
+			<g transform="translate(407.274475008069,537.7800237179998) translate(-407.274475008069,-537.7800237179998)">
+				<path d="M392.6,530.5l14.7,7.3l-14.7,7.3V530.5z"/>
+			</g>
+		</g>
+		<path class="st6" d="M43.8,561.5h821l15.8,15.8V602H43.8V561.5 M864.8,561.5v15.8h15.8"/>
+		<g>
+			<text transform="matrix(1 0 0 1 373.8671 586.1573)" class="st7 st5">Step 2: Consent Initiation</text>
+		</g>
+		<g>
+			<g>
+				<rect x="507.5" y="625.7" class="st0" width="139.7" height="22.9"/>
+			</g>
+			<g>
+				<rect x="519.8" y="643.3" class="st0" width="144.6" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 522.3944 641.5714)" class="st7 st5">[POST /consents]</text>
+			<g>
+				<text transform="matrix(1 0 0 1 510.1682 641.5714)" class="st7 st5">6 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 522.3944 659.1631)" class="st1 st5">Creation of a consent</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,666.2h342.9"/>
+			<g transform="translate(764.6438206284465,666.1998527379998) translate(-764.6438206284465,-666.1998527379998)">
+				<path d="M750,658.9l14.7,7.3l-14.7,7.3V658.9z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="493.7" y="689.9" class="st0" width="184.5" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 508.5719 705.7813)" class="st1 st5">HTTP 201 - redirectUri, id</text>
+			<g>
+				<text transform="matrix(1 0 0 1 496.3457 705.7813)" class="st7 st5">7 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M764.6,712.8H421.8"/>
+			<g transform="translate(407.274475008069,712.8180098479997) translate(-407.274475008069,-712.8180098479997)">
+				<path d="M421.9,705.5l-14.7,7.3l14.7,7.3V705.5z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="143.2" y="806.6" class="st0" width="180.5" height="22.9"/>
+			</g>
+			<g>
+				<rect x="163.6" y="820.2" class="st0" width="119.3" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 166.2527 818.3995)" class="st1 st5">Redirects the customer </text>
+			<g>
+				<text transform="matrix(1 0 0 1 145.8733 818.3995)" class="st7 st5">8 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 166.2527 835.9912)" class="st1 st5">(with </text>
+			<text transform="matrix(1 0 0 1 201.2777 835.9912)" class="st7 st5">redirectUri</text>
+			<text transform="matrix(1 0 0 1 275.4223 835.9912)" class="st1 st5">)</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,843H74.1"/>
+			<g transform="translate(59.65458007128515,777.0279243579997) translate(-59.65458007128515,-777.0279243579997)">
+				<path d="M74.3,835.7L59.7,843l14.7,7.3V835.7z"/>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M954.6,823.6"/>
+			<path class="st8" d="M59.7,823.6"/>
+		</g>
+		<g>
+			<path class="st8" d="M74.1,934.5"/>
+			<path class="st8" d="M969.1,934.5"/>
+		</g>
+		<g>
+			<g>
+				<rect x="334.1" y="958.2" class="st0" width="256.2" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 357.1349 974.0556)" class="st1 st5">Follows the redirect (to the ASPSP)</text>
+			<g>
+				<text transform="matrix(1 0 0 1 336.7555 974.0556)" class="st7 st5">9 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M59.7,981.1h790.7"/>
+			<g transform="translate(864.815544857931,981.0923101979996) translate(-864.815544857931,-981.0923101979996)">
+				<path d="M850.2,973.8l14.7,7.3l-14.7,7.3V973.8z"/>
+			</g>
+		</g>
+		<path class="st10" d="M43.8,1004.8h821l15.8,15.8v24.6H43.8V1004.8 M864.8,1004.8v15.8h15.8"/>
+		<g>
+			<text transform="matrix(1 0 0 1 296.0361 1029.4696)" class="st7 st5">Customer makes the SCA on the ASPSP screen</text>
+		</g>
+		<g>
+			<g>
+				<rect x="367.5" y="1089.1" class="st0" width="189.4" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 390.5422 1104.8837)" class="st1 st5">Call-back</text>
+			<g>
+				<text transform="matrix(1 0 0 1 370.1628 1104.8837)" class="st7 st5">10 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M864.8,1111.9H74.1"/>
+			<g transform="translate(59.65458007128515,1091.9203818179997) translate(-59.65458007128515,-1091.9203818179997)">
+				<path d="M74.3,1104.6l-14.7,7.3l14.7,7.3V1104.6z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="164.8" y="1178.9" class="st0" width="137.3" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 187.849 1194.7382)" class="st1 st5">Follows call-back</text>
+			<g>
+				<text transform="matrix(1 0 0 1 167.4696 1194.7382)" class="st7 st5">11 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M59.7,1201.8h333.1"/>
+			<g transform="translate(407.274475008069,1231.774853148) translate(-407.274475008069,-1231.774853148)">
+				<path d="M392.6,1194.4l14.7,7.3l-14.7,7.3V1194.4z"/>
+			</g>
+		</g>
+		<path class="st6" d="M43.8,1255.5h821l15.8,15.8v24.6H43.8V1255.5 M864.8,1255.5v15.8h15.8"/>
+		<g>
+			<text transform="matrix(1 0 0 1 358.7991 1280.1522)" class="st7 st5">Step 3: Consent Confirmation</text>
+		</g>
+		<g>
+			<g>
+				<rect x="428.1" y="1319.7" class="st0" width="116.1" height="22.9"/>
+			</g>
+			<g>
+				<rect x="448.5" y="1337.3" class="st0" width="79.4" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 451.1095 1335.5662)" class="st1 st5">Extract query </text>
+			<g>
+				<text transform="matrix(1 0 0 1 430.7302 1335.5662)" class="st7 st5">12 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 451.1095 1353.158)" class="st1 st5">parameters</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,1360.2h70.4v22.9h-55.9"/>
+			<g transform="translate(407.274475008069,1383.063966788) translate(-407.274475008069,-1383.063966788)">
+				<path d="M421.9,1375.7l-14.7,7.3l14.7,7.3V1375.7z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="483.1" y="1406.8" class="st0" width="205.7" height="22.9"/>
+			</g>
+			<g>
+				<rect x="503.5" y="1424.4" class="st0" width="179.7" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 506.1417 1422.6454)" class="st7 st5">[POST /consents/confirm]</text>
+			<g>
+				<text transform="matrix(1 0 0 1 485.7623 1422.6454)" class="st7 st5">13 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 506.1417 1440.2372)" class="st1 st5">Confirmation of a consents</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,1447.3h342.9"/>
+			<g transform="translate(764.6438206284465,1447.273881298) translate(-764.6438206284465,-1447.273881298)">
+				<path d="M750,1439.9l14.7,7.3l-14.7,7.3V1439.9z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="539.7" y="1471" class="st0" width="92.5" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 562.7451 1486.8553)" class="st1 st5">HTTP 200</text>
+			<g>
+				<text transform="matrix(1 0 0 1 542.3657 1486.8553)" class="st7 st5">14 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M764.6,1493.9H421.8"/>
+			<g transform="translate(407.274475008069,1493.8920384080002) translate(-407.274475008069,-1493.8920384080002)">
+				<path d="M421.9,1486.6l-14.7,7.3l14.7,7.3V1486.6z"/>
+			</g>
+		</g>
+		<path class="st6" d="M43.8,1517.6h821l15.8,15.8v24.6H43.8V1517.6 M864.8,1517.6v15.8h15.8"/>
+		<g>
+			<text transform="matrix(1 0 0 1 329.0604 1542.2694)" class="st7 st5">Step 4: Request Accounts Information</text>
+		</g>
+		<g>
+			<g>
+				<rect x="516.9" y="1581.9" class="st0" width="138.1" height="22.9"/>
+			</g>
+			<g>
+				<rect x="537.3" y="1599.4" class="st0" width="107.1" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 539.9463 1597.6833)" class="st7 st5">[GET /accounts]</text>
+			<g>
+				<text transform="matrix(1 0 0 1 519.5669 1597.6833)" class="st7 st5">15 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 539.9463 1615.2751)" class="st1 st5">List of accounts</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,1622.3h342.9"/>
+			<g transform="translate(764.6438206284465,1622.3118674280004) translate(-764.6438206284465,-1622.3118674280004)">
+				<path d="M750,1615l14.7,7.3l-14.7,7.3V1615z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="428.1" y="1646.1" class="st0" width="315.7" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 451.1095 1661.8933)" class="st1 st5">HTTP 200 - accounts, balances (accountIds)</text>
+			<g>
+				<text transform="matrix(1 0 0 1 430.7302 1661.8933)" class="st7 st5">16 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M764.6,1668.9H421.8"/>
+			<g transform="translate(407.274475008069,1668.9300245380005) translate(-407.274475008069,-1668.9300245380005)">
+				<path d="M421.9,1661.6l-14.7,7.3l14.7,7.3V1661.6z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="80.5" y="1692.7" class="st0" width="306" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 103.4896 1708.5115)" class="st1 st5">Display the accounts of the chosen ASPSP</text>
+			<g>
+				<text transform="matrix(1 0 0 1 83.1103 1708.5115)" class="st7 st5">17 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M407.3,1715.5H74.1"/>
+			<g transform="translate(59.65458007128515,1715.5481816480005) translate(-59.65458007128515,-1715.5481816480005)">
+				<path d="M74.3,1708.2l-14.7,7.3l14.7,7.3V1708.2z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="104.1" y="1739.3" class="st0" width="258.7" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 127.1367 1755.1296)" class="st1 st5">Customer wants to see transactions</text>
+			<g>
+				<text transform="matrix(1 0 0 1 106.7573 1755.1296)" class="st7 st5">18 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M59.7,1762.2h333.1"/>
+			<g transform="translate(407.274475008069,1762.1663387580006) translate(-407.274475008069,-1762.1663387580006)">
+				<path d="M392.6,1754.8l14.7,7.3l-14.7,7.3V1754.8z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="457" y="1785.9" class="st0" width="257.8" height="22.9"/>
+			</g>
+			<g>
+				<rect x="477.4" y="1803.5" class="st0" width="107.1" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 480.068 1801.7478)" class="st7 st5">[GET /accounts/{id}/transactions]</text>
+			<g>
+				<text transform="matrix(1 0 0 1 459.6886 1801.7478)" class="st7 st5">19 </text>
+			</g>
+			<text transform="matrix(1 0 0 1 480.068 1819.3396)" class="st1 st5">List of accounts</text>
+		</g>
+		<g>
+			<path class="st8" d="M407.3,1826.4h342.9"/>
+			<g transform="translate(764.6438206284465,1826.3762532680007) translate(-764.6438206284465,-1826.3762532680007)">
+				<path d="M750,1819l14.7,7.3l-14.7,7.3V1819z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="472.5" y="1850.1" class="st0" width="226.9" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 495.5261 1865.9578)" class="st1 st5">HTTP 200 - transactions report</text>
+			<g>
+				<text transform="matrix(1 0 0 1 475.1467 1865.9578)" class="st7 st5">20 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M764.6,1873H421.8"/>
+			<g transform="translate(407.274475008069,1872.9944103780008) translate(-407.274475008069,-1872.9944103780008)">
+				<path d="M421.9,1865.7l-14.7,7.3l14.7,7.3V1865.7z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="142.8" y="1896.7" class="st0" width="181.3" height="22.9"/>
+			</g>
+			<text transform="matrix(1 0 0 1 165.8375 1912.5759)" class="st1 st5">Display the transactions</text>
+			<g>
+				<text transform="matrix(1 0 0 1 145.4581 1912.5759)" class="st7 st5">21 </text>
+			</g>
+		</g>
+		<g>
+			<path class="st9" d="M407.3,1919.6H74.1"/>
+			<g transform="translate(59.65458007128515,1919.6125674880009) translate(-59.65458007128515,-1919.6125674880009)">
+				<path d="M74.3,1912.3l-14.7,7.3l14.7,7.3V1912.3z"/>
+			</g>
+		</g>
+		<g>
+			<path class="st8" d="M750.2,2048"/>
+			<path class="st8" d="M407.3,2048"/>
+		</g>
+		<g>
+			<path class="st8" d="M74.1,2158.9"/>
+			<path class="st8" d="M407.3,2158.9"/>
+		</g>
+	</g>
+</g>
+</svg>
