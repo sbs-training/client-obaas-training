@@ -16,7 +16,13 @@ Steps to complete:
 - Fetch and display the PSU's accounts' transactions
 - Let the PSU delete his consents
 
-## API documentation
+## OBAAS API
+
+### Auth
+
+To access the API you will need to provide a bearer token in the authorization header of every HTTP call.
+
+### Documentation
 
 [See OpenAPI file](./doc/obaas-v1.openapi.yaml)
 
